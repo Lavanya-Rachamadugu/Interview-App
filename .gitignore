@@ -1,0 +1,10 @@
+# Ignore node_modules in any directory
+**/node_modules/
+
+# Ignore .env files in any directory
+**/.env
+
+# Firebase specific ignores
+.firebase/
+firestore.indexes.json
+firebase-debug.log
