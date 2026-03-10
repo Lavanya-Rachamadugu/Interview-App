@@ -48,12 +48,13 @@ function Signup() {
             onChange={(e)=>setPassword(e.target.value)}
             required
           />
-
+          <Link to='/'>
           <button
             className="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition"
           >
             Sign Up
           </button>
+          </Link>
 
         </form>
 

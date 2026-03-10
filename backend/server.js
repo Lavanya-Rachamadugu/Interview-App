@@ -14,7 +14,7 @@ const groq = new Groq({
 /* =========================================================
    GENERATE QUESTION
 ========================================================= */
-app.post("/api/generate-question", async (req, res) => {
+app.post("/generate-question", async (req, res) => {
   const { jdDescription, difficulty } = req.body;
 
   try {
@@ -48,7 +48,7 @@ app.post("/api/generate-question", async (req, res) => {
 /* =========================================================
    EVALUATE ANSWER
 ========================================================= */
-app.post("/api/evaluate-answer", async (req, res) => {
+app.post("/evaluate-answer", async (req, res) => {
   const { question, userAnswer } = req.body;
 
   try {

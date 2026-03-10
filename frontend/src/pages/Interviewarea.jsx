@@ -33,7 +33,7 @@ function Interviewarea() {
 
   const fetchQuestion = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/generate-question", {
+      const res = await axios.post("https://interview-app-1-zcow.onrender.com/generate-question", {
         jdDescription,
         difficulty: difficultyLevel
       });
@@ -67,7 +67,7 @@ function Interviewarea() {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/evaluate-answer", {
+      const res = await axios.post("https://interview-app-1-zcow.onrender.com/evaluate-answer", {
         question,
         userAnswer: code
       });
@@ -95,7 +95,7 @@ function Interviewarea() {
 
   const handleSkip = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/evaluate-answer", {
+      const res = await axios.post("https://interview-app-1-zcow.onrender.com/evaluate-answer", {
         question,
         userAnswer: ""
       });
@@ -131,7 +131,7 @@ function Interviewarea() {
     // Check if current question needs evaluation before we leave
     if (question && !performance.some(p => p.question === question)) {
       try {
-        const res = await axios.post("http://localhost:5000/api/evaluate-answer", {
+        const res = await axios.post("https://interview-app-1-zcow.onrender.com/evaluate-answer", {
           question,
           userAnswer: code
         });
