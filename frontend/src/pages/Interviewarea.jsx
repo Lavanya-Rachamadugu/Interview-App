@@ -30,20 +30,25 @@ function Interviewarea() {
   useEffect(() => {
     if (started) fetchQuestion();
   }, [difficultyLevel, started]);
-
-  const fetchQuestion = async () => {
-    try {
-      const res = await axios.post("https://interview-app-1-zcow.onrender.com/generate-question", {
+const fetchQuestion = async () => {
+  try {
+    const res = await axios.post(
+      "https://interview-app-1-zcow.onrender.com/generate-question",
+      {
         jdDescription,
         difficulty: difficultyLevel
-      });
-      setQuestion(res.data.question);
-      setCode("");
-      setOutput("");
-    } catch (err) {
-      setQuestion("Failed to fetch question.");
-    }
-  };
+      }
+    );
+
+    console.log("QUESTION RESPONSE:", res.data);
+    setQuestion(res.data.question);
+    setCode("");
+    setOutput("");
+  } catch (err) {
+    console.error("FETCH QUESTION ERROR:", err);
+    setQuestion("Failed to fetch question.");
+  }
+};
 
   const adjustDifficulty = (answeredCorrectly) => {
     if (answeredCorrectly) {
